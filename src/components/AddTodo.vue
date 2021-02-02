@@ -7,7 +7,7 @@
 </div>
 </template>
 <script>
-import uuid from 'uuid/dist/v4';
+// import uuid from 'uuid/dist/v4';
 export default {
     name: "AddTodo",
     data(){
@@ -17,13 +17,14 @@ export default {
         addTodo(e){
             e.preventDefault();
             const newTodo = {
-                id: uuid(),
+            //    id: uuid(),
                 title: this.title,
                 completed:false
             }
             // the above constructed the data we wanted, and now we need 
             // to send this to the parent class using emit
             this.$emit('add-todo', newTodo);
+            this.title = '';
         }
     }
 }
